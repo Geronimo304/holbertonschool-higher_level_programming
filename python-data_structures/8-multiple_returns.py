@@ -1,11 +1,11 @@
+
 #!/usr/bin/python3
 def multiple_returns(sentence):
-        longitud = len(sentence)
+    length = len(sentence)
 
-        if sentence == "":
-            first = None
+    if sentence == "":
+        first = None
+    else:
+        first = sentence[0]
 
-        else:
-            first = sentence[0]
-
-        return(longitud, first)
+    return (length, first)
