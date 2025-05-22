@@ -19,7 +19,7 @@ class   Rectangle:
         if not isinstance(valor, int):
             raise TypeError("NO ES UN ENTERO")
         if valor < 0:
-            raise TypeError("DEBE SER MAYOR A 0")
+            raise ValueError("DEBE SER MAYOR A 0")
         self.__ancho = valor
 
     def obtener_alto(self):
@@ -32,6 +32,6 @@ class   Rectangle:
         if not isinstance(valor, int):
             raise TypeError("NO ES ENTERO")
         if valor < 0:
-            raise TypeError("ES MENOR A 0")
+            raise ValueError("ES MENOR A 0")
         self.__alto = valor
         
