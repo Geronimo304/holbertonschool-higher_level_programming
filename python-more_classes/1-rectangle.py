@@ -14,12 +14,11 @@ class   Rectangle:
         return self.__ancho
     
     def establecer_ancho(self, valor):
-        """establece el ancho del rectangulo, siempre en cuando sea entero"""
-        
+        """establece el ancho del rectangulo, siempre en cuando sea entero"""    
         if not isinstance(valor, int):
             raise TypeError("NO ES UN ENTERO")
         if valor < 0:
-            raise ValueError("DEBE SER MAYOR A 0")
+            raise ValueError("DEBE SER > A 0")
         self.__ancho = valor
 
     def obtener_alto(self):
@@ -28,10 +27,9 @@ class   Rectangle:
     
     def establecer_alto(self, valor):
         """establece el alto del rectangulo, siempre en cuando sea entero"""
-
         if not isinstance(valor, int):
             raise TypeError("NO ES ENTERO")
         if valor < 0:
-            raise ValueError("ES MENOR A 0")
+            raise ValueError("ES < 0")
         self.__alto = valor
         
