@@ -1,32 +1,38 @@
 #!/usr/bin/python3
-"""define una clase rectangle."""
+"""Define una clase Rectangle."""
 
-class   Rectangle:
-    """representa un rectangulo"""
 
-    def __init__(self, ancho=0, alto=0):
-       
-       self.establecer_ancho(ancho)
-       self.establecer_alto(alto)
+class Rectangle:
+    """Representa un rectángulo."""
 
-    def obtener_ancho(self):
-        """decuelve el ancho"""
-        return self.__ancho
-    
-    def establecer_ancho(self, valor):
-        if not isinstance(valor, int):
+    def __init__(self, width=0, height=0):
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        """Devuelve el ancho."""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """Establece el ancho, validando tipo y valor."""
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        if valor < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
-        self.__ancho = valor
+        self.__width = value
 
-    def obtener_alto(self):
-        """devuelve el alto"""
-        return self.__alto
+    @property
+    def height(self):
+        """Devuelve el alto."""
+        return self.__height
 
-    def establecer_alto(self, valor):
-        if not isinstance(valor, int):
+    @height.setter
+    def height(self, value):
+        """Establece el alto, validando tipo y valor."""
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        if valor < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
-        self.__alto = valor
+        self.__height = value
