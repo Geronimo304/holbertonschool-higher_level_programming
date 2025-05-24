@@ -16,4 +16,3 @@ elif final_digit < 6 and final_digit != 0:
 
 elif final_digit == 0:
     print(f"Last digit of {number} is {final_digit} and is 0")
-    
