@@ -8,7 +8,6 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         Constructor de la clase.
-        Permite crear un rectángulo con ancho y alto opcionales (por defecto 0).
         """
         self.width = width
         self.height = height
@@ -20,11 +19,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """
-        Método para establecer (modificar) el valor del ancho con validación:
-        - Debe ser un entero, si no lanza TypeError.
-        - Debe ser >= 0, si no lanza ValueError.
-        """
+        """Método para establecer (modificar) el valor del ancho con validación:"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
@@ -38,11 +33,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """
-        Método para establecer (modificar) el valor del alto con validación:
-        - Debe ser un entero, si no lanza TypeError.
-        - Debe ser >= 0, si no lanza ValueError.
-        """
+        """Método para establecer (modificar) el valor del alto con validación."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
