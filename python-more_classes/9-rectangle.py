@@ -78,7 +78,8 @@ class Rectangle:
             rect_2 (Rectangle): Segundo rectángulo.
 
         Raises:
-            TypeError: Si rect_1 o rect_2 no son instancias de Rectangle.
+            TypeError: Si rect_1 o rect_2 no son instancias
+            de Rectangle.
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
