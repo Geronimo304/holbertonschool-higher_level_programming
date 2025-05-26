@@ -8,6 +8,8 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         Constructor de la clase.
+        Permite crear un rectángulo con ancho y alto opcionales
+        (por defecto 0).
         """
         self.width = width
         self.height = height
@@ -19,11 +21,17 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Método para establecer (modificar) el valor del ancho con validación:"""
+        """
+        Método para establecer (modificar) el valor del ancho con validación:
+        - Debe ser un entero, si no lanza TypeError.
+        - Debe ser >= 0, si no lanza ValueError.
+        """
         if not isinstance(value, int):
-            raise TypeError("width must be an integer")
+            raise TypeError(
+                "width must be an integer")
         if value < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError(
+                "width must be >= 0")
         self.__width = value
 
     @property
@@ -33,11 +41,17 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Método para establecer (modificar) el valor del alto con validación."""
+        """
+        Método para establecer (modificar) el valor del alto con validación:
+        - Debe ser un entero, si no lanza TypeError.
+        - Debe ser >= 0, si no lanza ValueError.
+        """
         if not isinstance(value, int):
-            raise TypeError("height must be an integer")
+            raise TypeError(
+                "height must be an integer")
         if value < 0:
-            raise ValueError("height must be >= 0")
+            raise ValueError(
+                "height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -50,8 +64,8 @@ class Rectangle:
     def perimeter(self):
         """
         Devuelve el perímetro del rectángulo.
+        Si el ancho o el alto es 0, el perímetro es 0.
         Fórmula: 2 * (ancho + alto)
-        Si el ancho o el alto son 0, el perímetro es 0.
         """
         if self.__width == 0 or self.__height == 0:
             return 0
