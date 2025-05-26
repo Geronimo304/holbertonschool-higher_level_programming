@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-
-
 """Clase Rectangle que define un rectángulo con atributos privados,
 atributos de clase y métodos públicos, incluyendo comparación."""
+
 
 class Rectangle:
     """Define un rectángulo."""
