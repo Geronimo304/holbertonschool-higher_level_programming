@@ -38,4 +38,3 @@ class Rectangle(BaseGeometry):
             str: String in the format [Rectangle] <width>/<height>
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
-    

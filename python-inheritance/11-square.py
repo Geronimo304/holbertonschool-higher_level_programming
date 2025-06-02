@@ -27,4 +27,3 @@ class Square(Rectangle):
             str: String in the format [Square] <size>/<size>
         """
         return "[Square] {}/{}".format(self.__size, self.__size)
-    
