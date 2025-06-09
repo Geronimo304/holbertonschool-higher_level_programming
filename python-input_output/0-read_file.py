@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""inicializo la funcion"""
+"""archivo de texto UTF-8 y lo imprime en stdout"""
 
 
 def read_file(filename=""):
-    """abro el archivo y lo lee"""
-    with open(filename, "r", encoding="utf-8") as f:
-        print(f.read(), end="")
+    """funcio para leer un archivo"""
+    with open(filename, 'r', encoding='utf-8') as my_file_0:
+        for linea in my_file_0:
+            print(linea, end='')
