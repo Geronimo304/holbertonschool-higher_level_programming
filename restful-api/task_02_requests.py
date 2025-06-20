@@ -7,7 +7,7 @@ def fetch_and_print_posts():
     url = "https://jsonplaceholder.typicode.com/posts"
     reply = requests.get(url)
 
-    print("Código de estado:", reply.status_code)
+    print(f"Status Code: {reply.status_code}")
 
     if reply.ok:
         all_posts = reply.json()
