@@ -3,36 +3,37 @@ import requests
 import csv
 
 def fetch_and_print_posts():
-    """Obtiene y muestra los títulos de las publicaciones desde JSONPlaceholder"""
+    """Hace una solicitud GET a la API y muestra los títulos de los posts."""
     url = "https://jsonplaceholder.typicode.com/posts"
-    reply = requests.get(url)
+    response = requests.get(url)
 
-    print(f"Status Code: {reply.status_code}")
+    print(f"Status Code: {response.status_code}")
 
-    if reply.ok:
-        all_posts = reply.json()
-        for i, entry in enumerate(all_posts, start=1):
-            print(f"{i}. {entry.get('title')}")
+    if response.status_code == 200:
+        posts = response.json()
+        for post in posts:
+            print(post['title'])
 
 def fetch_and_save_posts():
-    """Guarda las publicaciones en un archivo CSV con id, título y contenido"""
-    endpoint = "https://jsonplaceholder.typicode.com/posts"
-    resultado = requests.get(endpoint)
+    """Obtiene los posts de la API y los guarda en un archivo CSV con los encabezados esperados."""
+    url = "https://jsonplaceholder.typicode.com/posts"
+    response = requests.get(url)
 
-    if resultado.status_code == 200:
-        publicaciones = resultado.json()
-        datos_csv = []
+    if response.status_code == 200:
+        posts = response.json()
 
-        for p in publicaciones:
-            datos_csv.append({
-                "id": p.get("id"),
-                "titulo": p.get("title"),
-                "contenido": p.get("body")
+        data = []
+        for post in posts:
+            data.append({
+                'id': post.get('id'),
+                'title': post.get('title'),
+                'body': post.get('body')
             })
 
-        with open("posts.csv", mode="w", encoding="utf-8", newline="") as archivo_csv:
-            columnas = ["id", "titulo", "contenido"]
-            escritor = csv.DictWriter(archivo_csv, fieldnames=columnas)
-            escritor.writeheader()
-            for fila in datos_csv:
-                escritor.writerow(fila)
+        with open('posts.csv', mode='w', newline='', encoding='utf-8') as csvfile:
+            fieldnames = ['id', 'title', 'body']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            writer.writeheader()
+            writer.writerows(data)
+
