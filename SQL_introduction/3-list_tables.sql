@@ -1,2 +1,2 @@
--- listo una base de datos
-SHOW DATABASES;
+-- listo una base de datos.
+SHOW TABLES;
