@@ -6,4 +6,4 @@ def uppercase(str):
         if "a" <= i <= "z":
             texto_ascii -= 32
         resultado += chr(texto_ascii)
-    print(resultado)
+    print("{}".format(resultado))
