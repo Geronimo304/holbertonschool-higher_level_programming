@@ -3,7 +3,7 @@ if __name__ == "__main__":
     import sys
 
     argv = sys.argv
-    num_args = len(argv) - 1  # Restamos 1 porque argv[0] es el nombre del script
+    num_args = len(argv) - 1
 
     if num_args == 0:
         print("0 arguments.")
