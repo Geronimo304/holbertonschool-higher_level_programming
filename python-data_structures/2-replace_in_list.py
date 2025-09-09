@@ -3,5 +3,7 @@ def replace_in_list(my_list, idx, element):
     if idx >= 0 and idx < len(my_list):
         my_list[idx] = element
         return my_list
-    else:
+    elif idx < 0:
+        return None
+    elif idx > len(my_list):
         return None
