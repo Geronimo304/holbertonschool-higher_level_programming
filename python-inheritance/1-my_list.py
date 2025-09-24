@@ -4,7 +4,8 @@
 
 
 class MyList(list): 
+   """Creamos la class mylist heredada de list"""
    def print_sorted(self):
-        """Creamos la class mylist heredada de list"""
+        """Declaramos la funcion"""
         lista = sorted(self)
         print(lista)
