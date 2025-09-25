@@ -1,2 +1,8 @@
 #!/usr/bin/python3
-# Archivo 5-main.py
+BaseGeometry = __import__('5-base_geometry').BaseGeometry
+
+bg = BaseGeometry()
+
+print(bg)
+print(dir(bg))
+print(dir(BaseGeometry))
