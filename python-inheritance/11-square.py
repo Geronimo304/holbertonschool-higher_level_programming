@@ -13,5 +13,6 @@ class Square(Rectangle):
 
     def __str__(self):
         """Llama al __str__ de Rectangle y añade algo extra """
-        base_str = super().__str__()
-        return f"{base_str}"
+        return (
+            f"[Square] {self._Rectangle__width:d}/{self._Rectangle__height:d}"
+        )
