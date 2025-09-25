@@ -19,6 +19,7 @@ class BaseGeometry:
 
 
 class Rectangle:
+    """Declaro la class rectangle heredada de basegeometry"""
     def __init__(self, width, height):
         """Comprobamos que sean enteros positivos"""
         if type(width) is not int and width >= 0:
