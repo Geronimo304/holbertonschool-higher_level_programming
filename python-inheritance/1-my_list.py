@@ -8,4 +8,3 @@ class MyList(list):
         """Declaramos la funcion"""
         lista = sorted(self)
         print(lista)
-        return lista
