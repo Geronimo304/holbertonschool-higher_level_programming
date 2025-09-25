@@ -21,9 +21,9 @@ class BaseGeometry:
 class Rectangle:
     def __init__(self, width, height):
         """Comprobamos que sean enteros positivos"""
-        if type(width) is not int:
+        if type(width) is not int and width >= 0:
             raise TypeError("height must be an integer")
         self.__width = width
-        if type(height) is not int:
+        if type(height) is not int and width >= 0:
             raise TypeError("height must be an integer")
         self.__height = height
