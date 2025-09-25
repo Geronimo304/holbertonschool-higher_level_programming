@@ -1,56 +1,60 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
->>> bg = BaseGeometry()
 
-# area() debe levantar excepción
->>> bg.area()
+>>> geometry_checker = BaseGeometry()
+
+>>> geometry_checker.integer_validator("Square", 5)
+
+>>> geometry_checker.integer_validator("Square", "5")
 Traceback (most recent call last):
-...
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", (5,))
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", None)
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", True)
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", [3])
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", {4, 8})
+Traceback (most recent call last):
+    ...
+TypeError: Square must be an integer
+
+>>> geometry_checker.integer_validator("Square", -6)
+Traceback (most recent call last):
+    ...
+ValueError: Square must be greater than 0
+
+>>> geometry_checker.area()
+Traceback (most recent call last):
+    ...
 Exception: area() is not implemented
 
-# integer_validator con enteros válidos
->>> bg.integer_validator("age", 12)
->>> bg.integer_validator("width", 89)
-
-# integer_validator con valor no entero
->>> bg.integer_validator("name", "John")
+>>> geometry_checker.integer_validator()
 Traceback (most recent call last):
-...
-TypeError: name must be an integer
+    ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-# integer_validator con 0
->>> bg.integer_validator("age", 0)
+>>> geometry_checker.integer_validator("Square")
 Traceback (most recent call last):
-...
-ValueError: age must be greater than 0
+    ...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-# integer_validator con negativo
->>> bg.integer_validator("distance", -4)
+>>> geometry_checker.integer_validator("Square", 0)
 Traceback (most recent call last):
-...
-ValueError: distance must be greater than 0
-
-# Otros tipos no enteros
->>> bg.integer_validator("age", (4,))
-Traceback (most recent call last):
-...
-TypeError: age must be an integer
-
->>> bg.integer_validator("age", [3])
-Traceback (most recent call last):
-...
-TypeError: age must be an integer
-
->>> bg.integer_validator("age", True)
-Traceback (most recent call last):
-...
-TypeError: age must be an integer
-
->>> bg.integer_validator("age", {3, 4})
-Traceback (most recent call last):
-...
-TypeError: age must be an integer
-
->>> bg.integer_validator("age", None)
-Traceback (most recent call last):
-...
-TypeError: age must be an integer
+    ...
+ValueError: Square must be greater than 0
