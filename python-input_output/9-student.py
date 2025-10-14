@@ -11,6 +11,4 @@ class Student:
     
     def to_json(self):
         """Devuelve los atributos como instancias"""
-        return alumno.__dict__
-
-alumno = Student("Geronimo", "Negreira", 18)
+        return self.__dict__
