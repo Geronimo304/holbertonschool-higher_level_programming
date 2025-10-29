@@ -1,2 +1,2 @@
-"""Listo la database"""
+--Listo la database
 SHOW DATABASES;
