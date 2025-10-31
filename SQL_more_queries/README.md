@@ -1,1 +1,1 @@
-sdada
+## SQL More Queries detail.
