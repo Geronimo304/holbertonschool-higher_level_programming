@@ -1,0 +1,2 @@
+-- SELECCIONO LA FILA DE ID
+SELECT COUNT(id) FROM first_table;
