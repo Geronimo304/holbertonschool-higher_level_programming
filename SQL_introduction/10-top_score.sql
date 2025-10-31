@@ -1,0 +1,2 @@
+-- LISTO LOS REGISTROS DE UNA TABLA
+SELECT score, id FROM second_table ORDER BY score DESC;
