@@ -1,13 +1,12 @@
 from flask import Flask, jsonify, request
 
-
 app = Flask(__name__)
 users = {}
 
 
 @app.route("/")
 def home():
-    return f"Welcome to the Flask API!"
+    return "Welcome to the Flask API!"
 
 
 @app.get("/data")
@@ -17,7 +16,7 @@ def data():
 
 @app.route("/status")
 def status():
-    return f"OK"
+    return "OK"
 
 
 @app.get("/users/<username>")
@@ -35,7 +34,12 @@ def add_user():
     if not new_user or "username" not in new_user:
         return jsonify({"error": "Username is required"}), 400
 
-    users[new_user["username"]] = new_user
+    username = new_user["username"]
+
+    if username in users:
+        return jsonify({"error": "User already exists"}), 400
+
+    users[username] = new_user
 
     return jsonify({"message": "User added", "user": new_user}), 201
 
