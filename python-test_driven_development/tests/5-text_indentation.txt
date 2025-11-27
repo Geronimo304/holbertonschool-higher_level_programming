@@ -1,0 +1,68 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("adiós")
+adiós
+
+>>> text_indentation("uno.dos:tres?cuatro")
+uno.
+<BLANKLINE>
+dos:
+<BLANKLINE>
+tres?
+<BLANKLINE>
+cuatro
+
+>>> text_indentation("")
+
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("!?;")  # caracteres no válidos de corte
+!?
+<BLANKLINE>
+;
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation("uno.dos:tres?")
+uno.
+<BLANKLINE>
+dos:
+<BLANKLINE>
+tres?
+<BLANKLINE>
+
+
+
+>>> text_indentation("chau   .      ?")
+chau   .
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> text_indentation(16)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+>>> text_indentation("Python. Qué es? Lenguaje:    genial")
+Python.
+<BLANKLINE>
+Qué es?
+<BLANKLINE>
+Lenguaje:
+<BLANKLINE>
+genial
