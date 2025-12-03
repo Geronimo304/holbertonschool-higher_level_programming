@@ -1,1 +1,1 @@
-dasdasda
+## JavaScript excercises directory
